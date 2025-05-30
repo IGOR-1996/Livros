@@ -907,26 +907,6 @@
           
           // Salvar no localStorage
           localStorage.setItem('livros', JSON.stringify(books));
-
-// Enviar para Google Sheets
-fetch("https://script.google.com/macros/s/AKfycbwIKiRWlv5pTA8wsNbUj10KcYIIJj0nVgyN2kft4pIyvuUYzZexCtox79R3yPMZCvTj/exec", {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  console.log('📤 Enviando para Google Sheets:', formData);
-          body: JSON.stringify(formData)
-})
-.then(response => response.text())
-.then(data => {
-  console.log('Enviado ao Google Sheets:', data);
-  alert('📗 Livro salvo na planilha com sucesso!');
-})
-.catch(error => {
-  console.error('Erro ao enviar para o Google Sheets:', error);
-  alert('⚠️ Erro ao salvar na planilha do Google Sheets.');
-});
-
           
           // Atualizar tabela
           renderBooksTable();
